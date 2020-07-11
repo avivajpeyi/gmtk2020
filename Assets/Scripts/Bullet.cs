@@ -14,13 +14,11 @@ public class Bullet : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Tank"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Animal"))
         {
-            var tank = collision.gameObject.GetComponent<Tank>();
-            if (owner != tank)
-                owner.GiveKill();
-
-            tank.Kill();
+            var animal = collision.gameObject.GetComponent<AnimalHandler>();
+            owner.GiveKill();
+            animal.Sleep();
             Destroy(gameObject);
         }
     }

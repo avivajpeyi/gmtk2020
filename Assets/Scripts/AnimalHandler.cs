@@ -13,8 +13,11 @@ public enum AnimalType
 }
 
 
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
 public class AnimalHandler : MonoBehaviour
 {
+    private BoxCollider boxCollider;
     private GameObject player;
     public AnimalType animalType;
     UnityEngine.AI.NavMeshAgent nav;
@@ -24,6 +27,7 @@ public class AnimalHandler : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -48,8 +52,16 @@ public class AnimalHandler : MonoBehaviour
 
     public void Charge()
     {
-        Debug.Log(player.transform.position);
         nav.SetDestination(player.transform.position); //make path towards player
         transform.LookAt(player.transform); //rotate so you look at the player
+    }
+
+
+    public void Sleep()
+    {
+        // Play Sleep anim
+        gameObject.layer = LayerMask.NameToLayer("Ghost");
+        boxCollider.enabled = false;
+        this.gameObject.SetActive(false);
     }
 }
