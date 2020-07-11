@@ -3,9 +3,11 @@ using UnityEngine.UI;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 
-public class Tank : Agent
+public class Tank : MonoBehaviour
 {
-    [Header("Game stuff")]
+    [Header("Game stuff")] 
+    
+    public bool HumanPlayer = true;
     public float Speed;
     public float RotateSpeed;
     public float BulletSpeed;
@@ -42,7 +44,10 @@ public class Tank : Agent
     public Vector3 StartPosition {set {startPosition = value;}}
     public Quaternion StartRotation {set {startRotation = value;}}
 
-    public override void Initialize()
+    /// <summary>
+    /// When tank is created this is called
+    /// </summary>
+    void Start()
     {
         agentRb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
@@ -55,13 +60,23 @@ public class Tank : Agent
         }
     }
 
-    public override void OnActionReceived(float[] vectorAction)
+    void Update()
     {
-        AddReward(-1f / 3000f);
+        if (HumanPlayer)
+        {
+            var actionsOut = Heuristic();
+            OnActionReceived(actionsOut);
+        }
+            
+    }
+
+    public void OnActionReceived(float[] vectorAction)
+    {
+        //AddReward(-1f / 3000f);
         if (lastDied <= 0 && !boxCollider.enabled)
         {
             ResetTank();
-            EndEpisode();
+            //EndEpisode();
         }
 
         if (lastDied <= 0)
@@ -71,14 +86,14 @@ public class Tank : Agent
             agentRb.MoveRotation(agentRb.rotation * Quaternion.Euler(transform.up * Time.deltaTime * RotateSpeed * rotation));
             agentRb.velocity = transform.forward * Speed * Time.deltaTime * translation;
         }
-        else
+        else // DEAD (cant move anymore)
         {
             agentRb.velocity = Vector3.zero;
             lastDied -= Time.deltaTime;
         }
 
         if (lastDied <= 0 && lastShot <= 0 && bulletCount > 0 && vectorAction[2] == 1)
-        {
+        { 
             bulletCount--;
             lastShot = ShootCooldown;
             var bullet = Instantiate(BulletPrefab, transform.position + transform.forward * -BulletOffset + transform.up * BulletHeight, transform.rotation, transform.parent);
@@ -86,7 +101,7 @@ public class Tank : Agent
             bullet.GetComponent<Rigidbody>().velocity = transform.forward * BulletSpeed;
             if (!didKill)
             {
-                AddReward(ShootReward);
+                //AddReward(ShootReward);
             }
         }
         else
@@ -95,20 +110,23 @@ public class Tank : Agent
         }
     }
 
+
+
     public float[] Heuristic()
     {
-        var actionsOut = new float[3];
+        float[] actionsOut = new float[3];
         actionsOut[0] = -Input.GetAxisRaw("Vertical") + 1;
         actionsOut[1] = Input.GetAxisRaw("Horizontal") + 1;
         actionsOut[2] = Input.GetKey("space") ? 1 : 0;
 
+        Debug.Log("Move (" + actionsOut[0] + " " + actionsOut[1] + "), Shoot = " + actionsOut[2] + " ");
         return actionsOut;
     }
 
-    public override void CollectObservations(VectorSensor sensor)
-    {
-        sensor.AddObservation(bulletCount);
-    }
+//    public override void CollectObservations(VectorSensor sensor)
+//    {
+//        sensor.AddObservation(bulletCount);
+//    }
 
 
     private void ResetTank()
@@ -123,7 +141,7 @@ public class Tank : Agent
 
     public void Kill()
     {
-        AddReward(DeathPenalty);
+        //AddReward(DeathPenalty);
         GhostModel.SetActive(true);
         TankModel.SetActive(false);
         gameObject.layer = LayerMask.NameToLayer("Ghost");
@@ -139,7 +157,7 @@ public class Tank : Agent
 
     public void GiveKill()
     {
-        AddReward(KillReward);
+        //AddReward(KillReward);
         killCount++;
         didKill = true;
 
