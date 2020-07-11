@@ -25,7 +25,7 @@ public class ChargingBullMovement : ProceduralMovementMaster
     private float wanderRadius = 10f;
     private float detectionRadius = 5f;
 
-    public void Move()
+    public override void Move()
     {
 //        base.Move();
         // if in radius, charge

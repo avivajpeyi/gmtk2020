@@ -14,6 +14,10 @@ using System.Collections;
 public class ProceduralMovementMaster : MonoBehaviour
 {
 
+    Transform player;
+    public float playerHealth;
+    public float enemyHealth;
+    UnityEngine.AI.NavMeshAgent nav;
 
         // Enemy movement
 
@@ -27,8 +31,12 @@ public class ProceduralMovementMaster : MonoBehaviour
     }
 
 
+    public virtual void Move()
+    {
+        // this is what does the moving
+    }
 
-
+    
 
 
 
