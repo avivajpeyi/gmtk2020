@@ -31,7 +31,7 @@ public class Tank : MonoBehaviour
     public float DeathPenalty = -1;
     // SWITCH TO PUBLIC PROCEDURAL MOVEMENT MASTER 
     // different type of master for different animal
-    public ChargingBullMovement proceduralMovementController;
+    public ProceduralMovementMaster proceduralMovementController; 
 
     [Header("UI")]
     public Text KillText;
@@ -70,7 +70,7 @@ public class Tank : MonoBehaviour
         if (ProceduralEnemy)
         {
             // Enemy movement
-            proceduralMovementController =  this.gameObject.AddComponent<ChargingBullMovement>();
+            proceduralMovementController =  this.gameObject.AddComponent<ProceduralMovementMaster>();
         }
     }
 
@@ -84,7 +84,7 @@ public class Tank : MonoBehaviour
 
         if (ProceduralEnemy)
         {
-            proceduralMovementController.Move();
+            proceduralMovementController.Moveset_identifier();
         }
         
         

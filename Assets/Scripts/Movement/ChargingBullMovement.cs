@@ -15,7 +15,7 @@ public class ChargingBullMovement : ProceduralMovementMaster
     void Awake()
     {
         // references
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform; //Get player transform object (position, velocity, functions...)
         playerHealth = 1.0f;
         enemyHealth = 1.0f;
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -37,8 +37,8 @@ public class ChargingBullMovement : ProceduralMovementMaster
     public void Charge()
     {
         Debug.Log(player.position);
-        nav.SetDestination(player.position);
-        transform.LookAt(player);
+        nav.SetDestination(player.position); //make path towards player
+        transform.LookAt(player); //rotate so you look at the player
     }
 
     public void Wander()

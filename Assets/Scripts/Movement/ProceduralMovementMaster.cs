@@ -13,6 +13,25 @@ using System.Collections;
 
 public class ProceduralMovementMaster : MonoBehaviour
 {
+
+
+        // Enemy movement
+
+    public void Moveset_identifier()
+    {   
+        // if (enemytype=='Bull'){
+        ChargingBullMovement Moveset; //CHECK
+        Moveset = this.gameObject.AddComponent<ChargingBullMovement>();
+        //}
+        Moveset.Move();
+    }
+
+
+
+
+
+
+
 //    Transform player;
 //    public float playerHealth;
 //    public float enemyHealth;
