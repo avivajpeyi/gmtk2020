@@ -10,6 +10,7 @@ public class Tank : MonoBehaviour
     public bool ProceduralEnemy = false;
     public bool AIEnemy = false; // Not implemented yet 
     public float Speed;
+    public float Radius=1.6f; 
     public float RotateSpeed;
     public float BulletSpeed;
     public float BulletOffset;
@@ -42,6 +43,14 @@ public class Tank : MonoBehaviour
     public int KillCount => killCount;
     public int DeathCount => deathCount;
 
+    
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = new Color(1, 0, 0, 0.2f);
+        Gizmos.DrawSphere(transform.position, Radius);
+    }
+    
     public Vector3 StartPosition
     {
         set { startPosition = value; }
