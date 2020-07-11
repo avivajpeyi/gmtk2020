@@ -4,6 +4,7 @@
 ##### [gmtk-2020](https://itch.io/jam/gmtk-2020)
 ##### [zoomlink](https://monash.zoom.us/j/97279658035?pwd=MG5rZ3ppdGlQM1dJS3cwRm5iaUkvQT09)
 ##### [googleslides](https://docs.google.com/presentation/d/1HJD5aCsvni2Owi5bLW29mUbUPhZQlVw4xT22ews_vII/edit?usp=sharing)
+##### [kanban](https://github.com/avivajpeyi/gmtk2020/projects/1)
 # GMKT 2020 Game Jam!
 
 [itch.io page for game](https://avivajpeyi.itch.io/gmtk2020)
