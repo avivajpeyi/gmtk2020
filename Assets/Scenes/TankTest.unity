@@ -1680,8 +1680,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2338357606053120597}
   - component: {fileID: 2338357606046217999}
-  - component: {fileID: 2338357606053551108}
   - component: {fileID: 2338357606053551109}
+  - component: {fileID: 2338357606053551108}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -1698,28 +1698,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2338357606053551107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 070d4c796044b404a9374403ef5a7a5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ce960ba83f354ffebbea5f951182e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HumanPlayer: 0
-  ProceduralEnemy: 1
-  AIEnemy: 0
-  Speed: 0
-  RotateSpeed: 0
-  BulletSpeed: 0
-  BulletOffset: 0
-  BulletHeight: 0
-  ShootCooldown: 0
-  DeadCooldown: 0
-  Bullets: 0
-  BulletPrefab: {fileID: 0}
-  TankModel: {fileID: 2338357606053551107}
-  GhostModel: {fileID: 2338357606053551107}
-  KillReward: 1
-  ShootReward: 0.05
-  DeathPenalty: -1
-  proceduralMovementController: {fileID: 0}
-  KillText: {fileID: 0}
 --- !u!195 &2338357606053551109
 NavMeshAgent:
   m_ObjectHideFlags: 0
