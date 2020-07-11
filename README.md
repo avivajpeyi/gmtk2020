@@ -2,7 +2,7 @@
 ![Test 🧪](https://github.com/avivajpeyi/unity_template_project/workflows/Test%20%F0%9F%A7%AA/badge.svg?branch=master)
 ##### [Unity Version: 2019.4.2f1 (LTS)](https://unity3d.com/unity/qa/lts-releases)
 ##### [gmtk-2020](https://itch.io/jam/gmtk-2020)
-#####[zoomlink](https://monash.zoom.us/j/97279658035?pwd=MG5rZ3ppdGlQM1dJS3cwRm5iaUkvQT09)
+##### [zoomlink](https://monash.zoom.us/j/97279658035?pwd=MG5rZ3ppdGlQM1dJS3cwRm5iaUkvQT09)
 # GMKT 2020 Game Jam!
 
 [itch.io page for game](https://avivajpeyi.itch.io/gmtk2020)
