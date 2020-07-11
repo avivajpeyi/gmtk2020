@@ -22,6 +22,7 @@ public class AnimalHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     // Update is called once per frame
