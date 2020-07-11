@@ -51,5 +51,18 @@ public class AnimalHandler : MonoBehaviour
         Debug.Log(player.transform.position);
         nav.SetDestination(player.transform.position); //make path towards player
         transform.LookAt(player.transform); //rotate so you look at the player
+
+
+        float distance = Vector3.Distance(player.transform.position, transform.position);
+
+        if (distance < 10)
+        {
+            nav.speed = 20;
+        }
+        else if (distance < player.GetComponent<Tank>().Radius)
+        {
+            nav.speed = 0;
+        }
+
     }
 }
