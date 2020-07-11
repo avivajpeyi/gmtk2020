@@ -15,13 +15,14 @@ public enum AnimalType
 
 public class AnimalHandler : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public AnimalType animalType;
     UnityEngine.AI.NavMeshAgent nav;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
