@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7255844577060211800}
   m_Layer: 0
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,6 +206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HumanPlayer: 1
+  ProceduralEnemy: 0
+  AIEnemy: 0
   Speed: 500
   RotateSpeed: 150
   BulletSpeed: -15
@@ -213,8 +215,9 @@ MonoBehaviour:
   BulletHeight: 0.015
   ShootCooldown: 0.2
   DeadCooldown: 2
-  Bullets: 4
-  BulletPrefab: {fileID: 0}
+  Bullets: 10
+  BulletPrefab: {fileID: 7997625452005006370, guid: cc5549bb41de74a088fc30752bc7b0d7,
+    type: 3}
   TankModel: {fileID: 7255844577060211801}
   GhostModel: {fileID: 7255844577060211801}
   KillReward: 1

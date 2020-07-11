@@ -8,6 +8,9 @@ public class Tank : MonoBehaviour
     [Header("Game stuff")] 
     
     public bool HumanPlayer = true;
+
+    public bool ProceduralEnemy = false;
+    public bool AIEnemy = false; // Not implemented yet 
     public float Speed;
     public float RotateSpeed;
     public float BulletSpeed;
@@ -20,10 +23,15 @@ public class Tank : MonoBehaviour
     public GameObject TankModel;
     public GameObject GhostModel;
 
+
+    
     [Header("AI Stuff")]
     public float KillReward = 1;
     public float ShootReward = 0.05f;
     public float DeathPenalty = -1;
+    // SWITCH TO PUBLIC PROCEDURAL MOVEMENT MASTER 
+    // different type of master for different animal
+    public ChargingBullMovement proceduralMovementController;
 
     [Header("UI")]
     public Text KillText;
@@ -58,6 +66,12 @@ public class Tank : MonoBehaviour
             startPosition = transform.position;
             startRotation = transform.rotation;
         }
+        
+        if (ProceduralEnemy)
+        {
+            // Enemy movement
+            proceduralMovementController =  this.gameObject.AddComponent<ChargingBullMovement>();
+        }
     }
 
     void Update()
@@ -67,8 +81,17 @@ public class Tank : MonoBehaviour
             var actionsOut = Heuristic();
             OnActionReceived(actionsOut);
         }
-            
+
+        if (ProceduralEnemy)
+        {
+            proceduralMovementController.Move();
+        }
+        
+        
     }
+    
+    
+    
 
     public void OnActionReceived(float[] vectorAction)
     {
@@ -119,7 +142,7 @@ public class Tank : MonoBehaviour
         actionsOut[1] = Input.GetAxisRaw("Horizontal") + 1;
         actionsOut[2] = Input.GetKey("space") ? 1 : 0;
 
-        Debug.Log("Move (" + actionsOut[0] + " " + actionsOut[1] + "), Shoot = " + actionsOut[2] + " ");
+        //Debug.Log("Move (" + actionsOut[0] + " " + actionsOut[1] + "), Shoot = " + actionsOut[2] + " ");
         return actionsOut;
     }
 
