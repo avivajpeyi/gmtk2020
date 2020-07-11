@@ -3,7 +3,7 @@
 ##### [Unity Version: 2019.4.2f1 (LTS)](https://unity3d.com/unity/qa/lts-releases)
 ##### [gmtk-2020](https://itch.io/jam/gmtk-2020)
 # GMKT 2020 Game Jam!
-
+#####[zoomlink](https://monash.zoom.us/j/97279658035?pwd=MG5rZ3ppdGlQM1dJS3cwRm5iaUkvQT09)
 [itch.io page for game](https://avivajpeyi.itch.io/gmtk2020)
 
 # Some notes
