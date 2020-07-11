@@ -5,9 +5,10 @@ using Unity.MLAgents.Sensors;
 
 public class Tank : MonoBehaviour
 {
-    [Header("Game stuff")] 
-    
-    public bool HumanPlayer = true;
+    [Header("Game stuff")] public bool HumanPlayer = true;
+
+    public bool ProceduralEnemy = false;
+    public bool AIEnemy = false; // Not implemented yet 
     public float Speed;
     public float RotateSpeed;
     public float BulletSpeed;
@@ -20,13 +21,12 @@ public class Tank : MonoBehaviour
     public GameObject TankModel;
     public GameObject GhostModel;
 
-    [Header("AI Stuff")]
-    public float KillReward = 1;
+
+    [Header("AI Stuff")] public float KillReward = 1;
     public float ShootReward = 0.05f;
     public float DeathPenalty = -1;
 
-    [Header("UI")]
-    public Text KillText;
+    [Header("UI")] public Text KillText;
 
     private Rigidbody agentRb;
     private BoxCollider boxCollider;
@@ -41,8 +41,16 @@ public class Tank : MonoBehaviour
 
     public int KillCount => killCount;
     public int DeathCount => deathCount;
-    public Vector3 StartPosition {set {startPosition = value;}}
-    public Quaternion StartRotation {set {startRotation = value;}}
+
+    public Vector3 StartPosition
+    {
+        set { startPosition = value; }
+    }
+
+    public Quaternion StartRotation
+    {
+        set { startRotation = value; }
+    }
 
     /// <summary>
     /// When tank is created this is called
@@ -67,8 +75,8 @@ public class Tank : MonoBehaviour
             var actionsOut = Heuristic();
             OnActionReceived(actionsOut);
         }
-            
     }
+
 
     public void OnActionReceived(float[] vectorAction)
     {
@@ -81,9 +89,12 @@ public class Tank : MonoBehaviour
 
         if (lastDied <= 0)
         {
-            int translation = (int)vectorAction[0] - 1;
-            int rotation = (int)vectorAction[1] - 1;
-            agentRb.MoveRotation(agentRb.rotation * Quaternion.Euler(transform.up * Time.deltaTime * RotateSpeed * rotation));
+            int translation = (int) vectorAction[0] - 1;
+            int rotation = (int) vectorAction[1] - 1;
+            agentRb.MoveRotation(agentRb.rotation *
+                                 Quaternion.Euler(
+                                     transform.up * Time.deltaTime * RotateSpeed *
+                                     rotation));
             agentRb.velocity = transform.forward * Speed * Time.deltaTime * translation;
         }
         else // DEAD (cant move anymore)
@@ -93,10 +104,12 @@ public class Tank : MonoBehaviour
         }
 
         if (lastDied <= 0 && lastShot <= 0 && bulletCount > 0 && vectorAction[2] == 1)
-        { 
+        {
             bulletCount--;
             lastShot = ShootCooldown;
-            var bullet = Instantiate(BulletPrefab, transform.position + transform.forward * -BulletOffset + transform.up * BulletHeight, transform.rotation, transform.parent);
+            var bullet = Instantiate(BulletPrefab,
+                transform.position + transform.forward * -BulletOffset +
+                transform.up * BulletHeight, transform.rotation, transform.parent);
             bullet.GetComponent<Bullet>().Owner = this;
             bullet.GetComponent<Rigidbody>().velocity = transform.forward * BulletSpeed;
             if (!didKill)
@@ -111,7 +124,6 @@ public class Tank : MonoBehaviour
     }
 
 
-
     public float[] Heuristic()
     {
         float[] actionsOut = new float[3];
@@ -119,7 +131,7 @@ public class Tank : MonoBehaviour
         actionsOut[1] = Input.GetAxisRaw("Horizontal") + 1;
         actionsOut[2] = Input.GetKey("space") ? 1 : 0;
 
-        Debug.Log("Move (" + actionsOut[0] + " " + actionsOut[1] + "), Shoot = " + actionsOut[2] + " ");
+//        Debug.Log("Move (" + actionsOut[0] + " " + actionsOut[1] + "), Shoot = " + actionsOut[2] + " ");
         return actionsOut;
     }
 
@@ -158,6 +170,7 @@ public class Tank : MonoBehaviour
     public void GiveKill()
     {
         //AddReward(KillReward);
+        Debug.Log(this.gameObject.name + " got a kill!");
         killCount++;
         didKill = true;
 
