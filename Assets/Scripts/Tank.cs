@@ -119,7 +119,7 @@ public class Tank : MonoBehaviour
         actionsOut[1] = Input.GetAxisRaw("Horizontal") + 1;
         actionsOut[2] = Input.GetKey("space") ? 1 : 0;
 
-        Debug.Log("Move (" + actionsOut[0] + " " + actionsOut[1] + "), Shoot = " + actionsOut[2] + " ");
+//        Debug.Log("Move (" + actionsOut[0] + " " + actionsOut[1] + "), Shoot = " + actionsOut[2] + " ");
         return actionsOut;
     }
 
@@ -158,6 +158,7 @@ public class Tank : MonoBehaviour
     public void GiveKill()
     {
         //AddReward(KillReward);
+        Debug.Log(this.gameObject.name + " got a kill!");
         killCount++;
         didKill = true;
 
