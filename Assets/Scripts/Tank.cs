@@ -7,8 +7,8 @@ public class Tank : MonoBehaviour
 {
     [Header("Game stuff")] public bool HumanPlayer = true;
 
-    public bool ProceduralEnemy = false;
-    public bool AIEnemy = false; // Not implemented yet 
+    public bool ProceduralAnimal = false;
+    public bool AIAnimal = false; // Not implemented yet 
     public float Speed;
     public float Radius=1.6f; 
     public float RotateSpeed;
@@ -69,7 +69,7 @@ public class Tank : MonoBehaviour
         agentRb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         bulletCount = Bullets;
-
+        agentRb.detectCollisions = true;
         if (startPosition == null)
         {
             startPosition = transform.position;

@@ -5,7 +5,11 @@ public class Bullet : MonoBehaviour
     public float DestroyTimeout;
 
     private Tank owner;
-    public Tank Owner { set { owner = value; } }
+
+    public Tank Owner
+    {
+        set { owner = value; }
+    }
 
     void Start()
     {
@@ -16,10 +20,11 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Animal"))
         {
-            var animal = collision.gameObject.GetComponent<AnimalHandler>();
-            owner.GiveKill();
-            animal.Sleep();
-            Destroy(gameObject);
+            var damageHandler = collision.gameObject.GetComponent<Animal_TakeDamage>();
+            if (damageHandler != null)
+            {
+                damageHandler.ProcessDamage(damage: 10);
+            }
         }
     }
 }
