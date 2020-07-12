@@ -57,6 +57,11 @@ public class AnimalHandler : MonoBehaviour
             Charge();
         }
 
+        if (animalType == AnimalType.GOAT)
+        {
+            wander();
+        }
+
         if (animalType == AnimalType.BULL)
         {
             
@@ -128,7 +133,8 @@ public class AnimalHandler : MonoBehaviour
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1); //Create a new path in a sphere around the object
             agent.SetDestination(newPos); //Overide the current path to the new random path
             timer = 0;
-            Instantiate(PlayerCube, transform.position, Quaternion.identity); //Leave mine each time it changes direction
+            if (animalType == AnimalType.BULL){ //Only the bulls leave mines
+            Instantiate(PlayerCube, transform.position, Quaternion.identity);} //Leave mine each time it changes direction
         }
         
     }

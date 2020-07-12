@@ -2509,6 +2509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 602568152}
+  PlayerCube: {fileID: 0}
   animalType: 0
   wanderRadius: 60
   wanderTimer: 2.5
