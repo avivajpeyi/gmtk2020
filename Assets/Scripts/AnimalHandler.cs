@@ -59,7 +59,7 @@ public class AnimalHandler : MonoBehaviour
 
         if (animalType == AnimalType.BULL)
         {
-            Charge();
+            
             BullCharge();
 
         }
