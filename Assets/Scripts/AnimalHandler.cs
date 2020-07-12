@@ -13,7 +13,7 @@ public enum AnimalState
     CHASE,
 }
 
-public enum AnimalType
+public enum AnimalCategory
 {
     ScardeyCat,
     Charger,
@@ -39,7 +39,7 @@ public class AnimalHandler : MonoBehaviour
     public bool isOnRoute;
     public bool isNavPaused;
     public float eatingProbabilityOnIdle = 0.5f;
-    public AnimalType animalType;
+    public AnimalCategory animalType;
 
 
     public delegate void GeneralEventHandler();
@@ -96,18 +96,18 @@ public class AnimalHandler : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
 
-        if (animalType == AnimalType.ScardeyCat)
+        if (animalType == AnimalCategory.ScardeyCat)
         {
             this.gameObject.AddComponent<Animal_NavFlee>();
             MyFleeTarget = GameObject.FindWithTag("Player").transform;
         }
 
-        else if (animalType == AnimalType.Charger)
+        else if (animalType == AnimalCategory.Charger)
         {
             this.gameObject.AddComponent<Animal_NavPause>();
             MyChaseTransform = GameObject.FindWithTag("Player").transform;
         }
-        else if (animalType == AnimalType.Pooper)
+        else if (animalType == AnimalCategory.Pooper)
         {
             // Poop on wander
         }

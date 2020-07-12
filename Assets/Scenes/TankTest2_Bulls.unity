@@ -133,25 +133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SA_Animal_CowBull (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: wanderTimer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: wanderSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 602568152}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.920692
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
@@ -161,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.4761457
+      value: 21.63
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
@@ -203,6 +188,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6877881670738837176, guid: 45d073f2b5388284e9a4e3e499553acc,
+        type: 3}
+      propertyPath: PoopPrefab
+      value: 
+      objectReference: {fileID: 945867477576979403, guid: c7dd046e265184fd4951052eb52c0ece,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d073f2b5388284e9a4e3e499553acc, type: 3}
 --- !u!1 &418795447
@@ -288,12 +279,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 81.01, y: 5.721, z: 21.999}
---- !u!1 &602568152 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7255844577060211801, guid: 84827b62942364897a7e69682afa15b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 7255844578263246731}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &667189022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -306,25 +291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SA_Animal_CowBull (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: wanderTimer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: wanderSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 602568152}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.470627
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
@@ -334,7 +304,7 @@ PrefabInstance:
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.528337
+      value: 21.63
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
@@ -376,6 +346,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6877881670738837176, guid: 45d073f2b5388284e9a4e3e499553acc,
+        type: 3}
+      propertyPath: PoopPrefab
+      value: 
+      objectReference: {fileID: 945867477576979403, guid: c7dd046e265184fd4951052eb52c0ece,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d073f2b5388284e9a4e3e499553acc, type: 3}
 --- !u!1001 &762825586
@@ -390,25 +366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SA_Animal_CowBull (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: wanderTimer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: wanderSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 602568152}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7938156
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
@@ -418,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.447545
+      value: 21.63
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
@@ -460,6 +421,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6877881670738837176, guid: 45d073f2b5388284e9a4e3e499553acc,
+        type: 3}
+      propertyPath: PoopPrefab
+      value: 
+      objectReference: {fileID: 945867477576979403, guid: c7dd046e265184fd4951052eb52c0ece,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d073f2b5388284e9a4e3e499553acc, type: 3}
 --- !u!1001 &1197976827
@@ -474,25 +441,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SA_Animal_CowBull (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: wanderSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: wanderTimer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 602568152}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.1087255
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
@@ -502,7 +454,7 @@ PrefabInstance:
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.298738
+      value: 21.63
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
@@ -544,6 +496,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6877881670738837176, guid: 45d073f2b5388284e9a4e3e499553acc,
+        type: 3}
+      propertyPath: PoopPrefab
+      value: 
+      objectReference: {fileID: 945867477576979403, guid: c7dd046e265184fd4951052eb52c0ece,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d073f2b5388284e9a4e3e499553acc, type: 3}
 --- !u!1001 &1250885126
@@ -558,35 +516,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: SA_Animal_CowBull (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 602568152}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: wanderTimer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223527570725502840, guid: 45d073f2b5388284e9a4e3e499553acc,
-        type: 3}
-      propertyPath: wanderSpeed
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.18
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.53
+      value: -1.3675761
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.37
+      value: 21.63
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
@@ -596,12 +539,12 @@ PrefabInstance:
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4223527570725889440, guid: 45d073f2b5388284e9a4e3e499553acc,
         type: 3}
@@ -628,6 +571,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6877881670738837176, guid: 45d073f2b5388284e9a4e3e499553acc,
+        type: 3}
+      propertyPath: PoopPrefab
+      value: 
+      objectReference: {fileID: 945867477576979403, guid: c7dd046e265184fd4951052eb52c0ece,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d073f2b5388284e9a4e3e499553acc, type: 3}
 --- !u!1 &1475275155
@@ -2147,13 +2096,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce960ba83f354ffebbea5f951182e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 602568152}
-  PlayerCube: {fileID: 0}
+  MyChaseTransform: {fileID: 0}
+  MyFleeTarget: {fileID: 0}
+  state: 2
+  isOnRoute: 0
+  isNavPaused: 0
+  eatingProbabilityOnIdle: 0.5
   animalType: 0
-  wanderRadius: 60
-  wanderTimer: 2.5
-  wanderSpeed: 0
-  charge_cooldown_time: 0
+  SleepingAnimal: {fileID: 0}
 --- !u!195 &2338357606053551109
 NavMeshAgent:
   m_ObjectHideFlags: 0
