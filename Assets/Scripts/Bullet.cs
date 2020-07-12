@@ -25,6 +25,12 @@ public class Bullet : MonoBehaviour
             {
                 damageHandler.ProcessDamage(damage: 10);
             }
+
+            var chargerHandler = collision.gameObject.GetComponent<ChargerHandler>();
+            if (chargerHandler != null)
+            {
+                chargerHandler.Sleep();
+            }
         }
     }
 }

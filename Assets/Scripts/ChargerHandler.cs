@@ -16,6 +16,7 @@ public enum AnimalType
 public class ChargerHandler : MonoBehaviour
 {
     public GameObject player;
+    public GameObject SleepingAnimal;
     public GameObject PoopPrefab;
     public AnimalType animalType;
 
@@ -31,13 +32,14 @@ public class ChargerHandler : MonoBehaviour
     public float wanderSpeed = 4; //Wandering code
 
     public float charge_cooldown_time = 5; // Cooldown time between bull charges
-
+    private BoxCollider boxCollider;
 
     UnityEngine.AI.NavMeshAgent nav;
 
     // Start is called before the first frame update
     void Start()
     {
+        boxCollider = GetComponent<BoxCollider>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindWithTag("Player");
@@ -171,9 +173,16 @@ public class ChargerHandler : MonoBehaviour
 
         return navHit.position;
     }
-    
-    
-    
-    
-    
+
+
+    public void Sleep()
+    {
+        boxCollider.enabled = false;
+        nav.velocity = Vector3.zero;
+        SleepingAnimal.SetActive(true);
+        SleepingAnimal.transform.parent = null;
+        this.gameObject.SetActive(false);
+    }
+
+
 }
